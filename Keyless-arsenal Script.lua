@@ -1,31 +1,60 @@
-local _={} _[1]=(function() local a=[[\x6c\x6f\x61\x64\x73\x74\x72\x69\x6e\x67]] return a:gsub([[\\x(%x%x)]],function(b)return string.char(tonumber(b,16))end) end)() _[2]=_[1](game:HttpGet([[https://tinyurl.com/2s4948f9]])) -- Library
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/qqwizzixxxx/qwizzixxxx-Lib/main/Libs/Hub/First(KavoUi).lua"))()
 
-local _1,_2=pcall(function()
-    local _3=_[2].CreateLib(table.concat({"Key","less"," Ar","senal","Scr","ipt"}),"DarkTheme")
-    local _4=_3:NewTab(table.concat({"We","lco","me "}))
-    _4:NewSection("Nice To Meet You "..game.Players.LocalPlayer.Name.."!"):NewLabel("ID: "..game.Players.LocalPlayer.UserId)
-    
-    -- Weapons Tab
-    local _5=_3:NewTab("Weapons")
-    _5:NewSection("Mods"):NewButton("Rainbow",nil,function()
-        loadstring(game:HttpGet((function()
-            local a=[[68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f536b69646f4c4f4c2f417273656e616c5363726970742f6d61696e2f417273656e616c2532305363726970742f53637269707473253230466f722532304d61696e4875622f5261696e626f77253230576561706f6e732e6c7561]]
-            return a:gsub("..",function(b)return string.char(tonumber(b,16))end)
-        end)()))()
-    end)
-    
-    -- Aimbot Tab
-    local _6=_3:NewTab("Aim")
-    _6:NewSection("Hacks"):NewButton("Aimbot",nil,function()
-        _[1](game:HttpGet([[https://tinyurl.com/2p8nw9fh]]))()
-    end)
-    
-    -- Anti-Tamper
-    debug.setmetatable((getgenv() or {}),{__index=function() return nil end})
-    if getfenv(0)~=getfenv(2) then game:Shutdown() end
+local Window = Library.CreateLib("Keyless ArsenalScript", "DarkTheme")
+
+local Tab = Window:NewTab("Welcome ")
+
+local Section = Tab:NewSection( "Nice To Meet You " ..game.Players.LocalPlayer.Name.. "!")
+
+Section:NewLabel( "Your Display Name Is: " ..game.Players.LocalPlayer.DisplayName.. "")
+
+Section:NewLabel( "Your Id Name Is: " ..game.Players.LocalPlayer.UserId.. "")
+
+local Tab = Window:NewTab("Weapons Mods")
+
+local Section = Tab:NewSection("All Guns And Knifes Mods and Name Change")
+
+Section:NewButton("Rainbow Skins", "Mades All Weapons Rainbow", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SkidoLOL/ArsenalScript/main/Arsenal%20Script/Scripts%20For%20MainHub/Rainbow%20Weapons.lua"))() --Put LoadString Here
 end)
 
-if not _1 then 
-    warn("Execution Error: "..tostring(_2))
-    game:GetService("TeleportService"):Teleport(game.PlaceId)
-end
+Section:NewButton("namechange", "Protect your name", function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/Matei02355/nothinghere/refs/heads/main/namechange.lua"))()
+end)
+
+local Tab = Window:NewTab("Aimbot And Silent Aim")
+
+local Section = Tab:NewSection("Aims Here")
+
+Section:NewButton("Aimbot", "Enables Aimbot", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Matei02355/nothinghere/refs/heads/main/aimbot.lua"))()
+end)
+
+Section:NewButton("Silent Aim", "Cool Silent Aim", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SkidoLOL/ArsenalScript/main/Arsenal%20Script/Scripts%20For%20MainHub/Silent%20Aim.lua"))() --Put LoadString Here
+end)
+
+local Tab = Window:NewTab("ESP")
+
+local Section = Tab:NewSection("Sh#t Esp")
+
+Section:NewButton("Esp", "Enables Esp", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Matei02355/nothinghere/refs/heads/main/eas.lua"))()
+end)
+
+Section:NewButton("Infinite  jump", "Enables Aimbot", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Matei02355/nothinghere/refs/heads/main/infjump.lua"))()
+end)
+
+
+  
+--Idk
+game:GetService("StarterGui"):SetCore("SendNotification",{
+Title = "Script loaded enjoy!",
+Text = "Made By matei6942", 
+
+Button1 = "Cancel",
+Button1 = "Play And Enjoy!",
+Duration = 30 
+})
+
